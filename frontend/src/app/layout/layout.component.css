@@ -1,0 +1,19 @@
+.full-page {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    height: 100vh;
+    gap:10px;
+
+}
+
+.sidebar {
+    position: relative;
+    background-color: #252A34;
+
+    width: 15%;
+}
+
+.main-content {
+    width: 85%;
+}
