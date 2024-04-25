@@ -1,7 +1,8 @@
 const express = require("express");
 const mongoose = require('mongoose');
-
 const dotenv = require('dotenv');
+const cors = require('cors'); // Import cors middleware
+
 const userRoute = require("./routes/user");
 const productsRoute = require("./routes/products");
 const cartRoute = require("./routes/cart");
@@ -12,6 +13,9 @@ const port = 3000;
 dotenv.config();
 
 const app = express();
+
+// Middleware to enable CORS
+app.use(cors());
 
 // Middleware to parse JSON requests
 app.use(express.json({ limit: '10mb' }));
@@ -26,7 +30,6 @@ app.use('/api/order', orderRoute);
 app.use('/api/cart', cartRoute);
 app.use('/api/auth', authRoute);
 
-
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/pfe')
     .then(() => {
@@ -35,7 +38,6 @@ mongoose.connect('mongodb://localhost:27017/pfe')
     .catch((error) => {
         console.error('Error connecting to MongoDB:', error);
     });
-
 
 // Start the server
 app.listen(port, () => {

@@ -13,6 +13,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { LayoutComponent } from './layout/layout.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,10 +29,11 @@ import { LayoutComponent } from './layout/layout.component';
     LoginComponent,
     LayoutComponent
   ],
-  imports: [
+  imports: [HttpClientModule ,
     BrowserModule,
     AppRoutingModule,
-     FormsModule
+     FormsModule,
+     BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
