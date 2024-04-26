@@ -9,16 +9,18 @@ import { OrderService } from '../services/order.service';
 export class OrdersComponent implements OnInit {
 
   constructor(private OrderService: OrderService) { }
-
+  total: number = 0
   orders: any
+  displayedColumns: string[] = ['ID', 'Référence', 'Nouveau client', 'Livraison', 'Client', 'Total', 'Paiement', 'État', 'Date'];
 
   ngOnInit(): void {
 
     this.OrderService.getAllOrders().subscribe(result => {
       this.orders = result;
+
+      this.total = this.OrderService.calculateSum(result, 'Total');
     })
   }
-
 
 
 

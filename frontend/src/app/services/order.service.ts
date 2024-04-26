@@ -27,7 +27,10 @@ export class OrderService {
         catchError(this.handleError)
       );
   }
-
+  calculateSum(data: any[], propertyName: string): number {
+    // Calculate sum of the specified property across all objects in the array
+    return data.reduce((acc, obj) => acc +parseFloat(obj[propertyName]), 0);
+  }
   // Get an order by its ID
   getOrderById(orderId: string): Observable<any> {
     const url = `${this.baseUrl}/${orderId}`;

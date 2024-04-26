@@ -7,9 +7,50 @@ body {
 a {
     text-decoration: none;
 }
+
 :root {
     font-family: "Poppins", sans-serif;
 
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+.header-block {
+    right : 0px;
+    gap: 10px;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr) );
+    margin-bottom: 10px;
+}
+
+.indecator-bloc {
+    border-radius: 16px;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #8ed7d6;
+}
+
+.indecator-title {
+    color: #252A34;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.indecator-value {
+    font-weight: 900;
+    color: #252A34;
+
+    font-size: 36px;
+}

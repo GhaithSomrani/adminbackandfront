@@ -8,12 +8,15 @@
 }
 
 .sidebar {
-    position: relative;
+    position: fixed;
     background-color: #252A34;
-
+    height : 100%;
     width: 15%;
 }
 
 .main-content {
-    width: 85%;
+    position: absolute;
+    right: 0;
+    width: 84%;
+    padding: 10px;
 }
